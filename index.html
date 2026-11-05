@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedIntern Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    color:white;
+    padding:25px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    padding:14px 16px;
+    margin-bottom:12px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.menu li:hover{
+    background:#1e293b;
+}
+
+.active{
+    background:#2563eb;
+}
+
+/* Main Content */
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#0f172a;
+}
+
+.user{
+    background:white;
+    padding:12px 20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:gray;
+    margin-bottom:10px;
+}
+
+.card h2{
+    color:#2563eb;
+}
+
+/* Sections */
+
+.section{
+    margin-top:30px;
+}
+
+.section-title{
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* Shift Card */
+
+.shift-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,0.08);
+}
+
+.shift-card p{
+    margin:10px 0;
+}
+
+/* Department */
+
+.department-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,0.08);
+}
+
+/* Table */
+
+.table-container{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,0.08);
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    text-align:left;
+    padding:12px;
+    background:#eef3ff;
+}
+
+table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+.critical{
+    color:white;
+    background:#ef4444;
+    padding:4px 10px;
+    border-radius:20px;
+}
+
+.stable{
+    color:white;
+    background:#22c55e;
+    padding:4px 10px;
+    border-radius:20px;
+}
+
+.observation{
+    color:white;
+    background:#f59e0b;
+    padding:4px 10px;
+    border-radius:20px;
+}
+
+/* Notes */
+
+.notes{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,0.08);
+}
+
+.note{
+    border-left:4px solid #2563eb;
+    padding-left:15px;
+    margin-bottom:20px;
+}
+
+.note-time{
+    color:gray;
+    font-size:14px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🏥 MedIntern Hub
+        </div>
+
+        <ul class="menu">
+            <li class="active">📊 Dashboard</li>
+            <li>📅 Schedule</li>
+            <li>🏢 Departments</li>
+            <li>👨‍⚕️ Doctors</li>
+            <li>🧑 Patients</li>
+            <li>📝 Round Notes</li>
+            <li>📈 Analytics</li>
+            <li>⚙ Settings</li>
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="header">
+            <h1>Welcome, Dr. Priansh 👋</h1>
+            <div class="user">
+                Internship Year 2026
+            </div>
+        </div>
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Assigned Patients</h3>
+                <h2>12</h2>
+            </div>
+
+            <div class="card">
+                <h3>Critical Cases</h3>
+                <h2>3</h2>
+            </div>
+
+            <div class="card">
+                <h3>Today's Shift</h3>
+                <h2>Morning</h2>
+            </div>
+
+            <div class="card">
+                <h3>Notifications</h3>
+                <h2>7</h2>
+            </div>
+
+        </div>
+
+        <!-- Shift + Department -->
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Today's Overview
+            </h2>
+
+            <div class="grid">
+
+                <div class="shift-card">
+
+                    <h3>🩺 Current Shift</h3>
+
+                    <p><strong>Department:</strong> Cardiology</p>
+                    <p><strong>Time:</strong> 08:00 AM - 08:00 PM</p>
+                    <p><strong>Doctor:</strong> Dr. Sarah Wilson</p>
+                    <p><strong>Ward:</strong> Block C</p>
+
+                </div>
+
+                <div class="department-card">
+
+                    <h3>❤️ Cardiology Department</h3>
+
+                    <p><strong>Doctors:</strong> 8</p>
+                    <p><strong>Patients:</strong> 47</p>
+                    <p><strong>Interns:</strong> 10</p>
+                    <p><strong>Occupancy:</strong> 72%</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Patients -->
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Assigned Patients
+            </h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Room</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <tr>
+                        <td>P101</td>
+                        <td>John Doe</td>
+                        <td>C101</td>
+                        <td><span class="critical">Critical</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>P102</td>
+                        <td>Emily Smith</td>
+                        <td>C112</td>
+                        <td><span class="stable">Stable</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>P103</td>
+                        <td>Robert James</td>
+                        <td>C205</td>
+                        <td><span class="observation">Observation</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>P104</td>
+                        <td>Jane Wilson</td>
+                        <td>C305</td>
+                        <td><span class="stable">Stable</span></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- Notes -->
+
+        <div class="section">
+
+            <h2 class="section-title">
+                Recent Doctor Round Notes
+            </h2>
+
+            <div class="notes">
+
+                <div class="note">
+
+                    <div class="note-time">
+                        08:30 AM
+                    </div>
+
+                    <h4>Patient P101</h4>
+
+                    <p>
+                        ECG completed. Continue monitoring every 2 hours.
+                    </p>
+
+                </div>
+
+                <div class="note">
+
+                    <div class="note-time">
+                        10:15 AM
+                    </div>
+
+                    <h4>Patient P103</h4>
+
+                    <p>
+                        Condition improving. Continue medication as prescribed.
+                    </p>
+
+                </div>
+
+                <div class="note">
+
+                    <div class="note-time">
+                        11:40 AM
+                    </div>
+
+                    <h4>Patient P102</h4>
+
+                    <p>
+                        Stable vitals. No immediate intervention required.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
